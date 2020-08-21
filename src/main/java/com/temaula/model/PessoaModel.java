@@ -6,8 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Pessoa {
+@Entity(name = "Pessoa")
+public class PessoaModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,10 +28,10 @@ public class Pessoa {
 	@Column(length = 16, nullable = false)
 	private String senha;
 	
-	public Pessoa() {
+	public PessoaModel() {
 	}
 
-	public Pessoa(Long id, String nome, String email, String telefone, String endereço, String senha) {	
+	public PessoaModel(Long id, String nome, String email, String telefone, String endereço, String senha) {	
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
@@ -100,7 +100,7 @@ public class Pessoa {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pessoa other = (Pessoa) obj;
+		PessoaModel other = (PessoaModel) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -111,7 +111,7 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + "]";
+		return "PessoaModel [id=" + id + ", nome=" + nome + "]";
 	}
 
 }
