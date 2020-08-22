@@ -1,12 +1,12 @@
-package com.temaula.service;
+package com.temaula.rdb.service;
 
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.temaula.dao.PessoaDAO;
-import com.temaula.model.PessoaModel;
+import com.temaula.rdb.dao.PessoaDAO;
+import com.temaula.rdb.model.PessoaModel;
 
 @Stateless
 public class PessoaService {

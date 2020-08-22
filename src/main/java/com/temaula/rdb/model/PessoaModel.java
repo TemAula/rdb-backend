@@ -1,4 +1,4 @@
-package com.temaula.model;
+package com.temaula.rdb.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -111,7 +111,7 @@ public class PessoaModel {
 
 	@Override
 	public String toString() {
-		return "PessoaModel [id=" + id + ", nome=" + nome + "]";
+		return "Pessoa: [id=" + id + ", nome=" + nome +" emai="+ email +"]";
 	}
 
 }

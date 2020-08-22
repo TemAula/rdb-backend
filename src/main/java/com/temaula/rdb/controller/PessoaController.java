@@ -1,4 +1,4 @@
-package com.temaula.servlet;
+package com.temaula.rdb.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.temaula.model.PessoaModel;
-import com.temaula.service.PessoaService;
+import com.temaula.rdb.model.PessoaModel;
+import com.temaula.rdb.service.PessoaService;
 
 @WebServlet("pessoa")
-public class PessoaServlet extends HttpServlet{
+public class PessoaController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	@Inject
@@ -27,7 +27,7 @@ public class PessoaServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 	PrintWriter pw = resp.getWriter();
-	service.listar().forEach(resultado -> pw.print("nome: "+resultado.getNome()));
+	service.listar().forEach(resultado -> pw.println(resultado.toString()));
 	pw.close();	
 	}
 	
