@@ -14,13 +14,27 @@ public class PessoaDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public List<PessoaModel> listar() {
+
+	public List<PessoaModel> listarTodos() {
 		return entityManager.createQuery("SELECT p FROM Pessoa p",
 				PessoaModel.class).getResultList();
 	}
 
 	public void inserir(PessoaModel pessoa) {
 		entityManager.persist(pessoa);
+	}
+
+	public void atualizar(PessoaModel t) {
+	entityManager.merge(t);	
+	}
+
+
+	public PessoaModel pesquisarId(Long id) {
+		return entityManager.find(PessoaModel.class, id);
+	}
+
+	public void deletar(PessoaModel t) {
+		entityManager.remove(pesquisarId(t.getId()));
 	}
 	
 

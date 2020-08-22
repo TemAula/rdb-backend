@@ -14,12 +14,23 @@ public class PessoaService {
 	@Inject
 	private PessoaDAO dao;
 	
-	public List<PessoaModel> listar(){
-		return dao.listar();
+	public List<PessoaModel> listarTodos(){
+		return dao.listarTodos();
 	}
 	
 	public void inserir(PessoaModel pessoa) {
 		dao.inserir(pessoa);
 	}
-
+	
+	public PessoaModel pesquisarId(Long id) {
+		return dao.pesquisarId(id);
+	}
+	
+	public void deletar(PessoaModel p) {
+		dao.deletar(p);
+	}
+	
+	public void atualizar (PessoaModel p){
+		dao.atualizar(p);
+	}
 }

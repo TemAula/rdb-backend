@@ -20,14 +20,12 @@ public class PessoaController extends HttpServlet{
 
 	@Inject
 	private PessoaService service;
-
-	private String[] String[];
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 	PrintWriter pw = resp.getWriter();
-	service.listar().forEach(resultado -> pw.println(resultado.toString()));
+	service.listarTodos().forEach(resultado -> pw.println(resultado.toString()));
 	pw.close();	
 	}
 	
