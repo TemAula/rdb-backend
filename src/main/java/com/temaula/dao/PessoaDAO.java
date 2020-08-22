@@ -1,4 +1,4 @@
-package com.temaula.rdb.dao;
+package com.temaula.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.temaula.rdb.model.PessoaModel;
+import com.temaula.model.PessoaModel;
 
 @Stateless
 public class PessoaDAO {

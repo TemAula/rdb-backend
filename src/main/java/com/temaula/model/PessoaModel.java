@@ -1,4 +1,4 @@
-package com.temaula.rdb.model;
+package com.temaula.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

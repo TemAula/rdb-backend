@@ -1,4 +1,4 @@
-package com.temaula.rdb.servlet;
+package com.temaula.servlet;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.temaula.rdb.model.PessoaModel;
-import com.temaula.rdb.service.PessoaService;
+import com.temaula.model.PessoaModel;
+import com.temaula.service.PessoaService;
 
 @WebServlet("pessoa")
 public class PessoaServlet extends HttpServlet{
