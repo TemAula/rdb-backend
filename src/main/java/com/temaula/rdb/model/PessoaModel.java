@@ -31,7 +31,7 @@ public class PessoaModel {
 	public PessoaModel() {
 	}
 
-	public PessoaModel(Long id, String nome, String email, String telefone, String endereço, String senha) {	
+	public PessoaModel(Long id, String nome, String email, String telefone, String endereço, String senha) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
@@ -82,6 +82,10 @@ public class PessoaModel {
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override

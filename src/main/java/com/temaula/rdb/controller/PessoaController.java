@@ -1,42 +1,70 @@
 package com.temaula.rdb.controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import com.temaula.rdb.model.PessoaModel;
 import com.temaula.rdb.service.PessoaService;
 
-@WebServlet("pessoa")
-public class PessoaController extends HttpServlet{
+@Path("pessoa")
+public class PessoaController{
 	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private PessoaService service;
 	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-	PrintWriter pw = resp.getWriter();
-	service.listarTodos().forEach(resultado -> pw.println(resultado.toString()));
-	pw.close();	
+	@GET
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response listarTodos(){
+		return Response.ok(service.listarTodos()).build();
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		BufferedReader reader = req.getReader();
-		String[] text  = reader.readLine().split(",");
-	// Long id, String nome, String email, String telefone, String endereço, String senha
-		PessoaModel pessoa = new PessoaModel(null, text[0],text[1],text[2],text[3],text[4]);
-		service.inserir(pessoa);
+	@GET
+	@Path("/{id}")
+	@Produces(value = MediaType.APPLICATION_JSON)
+	public Response pesquisarId(@PathParam("id") Long id){
+		return Response.ok(service.pesquisarId(id)).build();
 	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response inserir(PessoaModel p) {
+		service.inserir(p);
+		return Response.status(201).build();
+	}
+	
+    @DELETE
+    @Path("/{id}")
+    @Consumes(value = {MediaType.APPLICATION_JSON})
+    public Response deletar(@PathParam("id") Long id) {
+    	service.deletar(id);
+        return Response.status(202).build();
+    }
+    
+    
+	@PUT
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/{id}")
+	public Response atualizar(@PathParam("id") Long id, PessoaModel p) {
+		p.setId(id);
+		System.out.println(p.toString());
+		service.atualizar(p);
+		return Response.status(202).build();
+	}
+	
+
 
 	
 }

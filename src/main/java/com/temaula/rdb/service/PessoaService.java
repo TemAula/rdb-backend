@@ -26,7 +26,8 @@ public class PessoaService {
 		return dao.pesquisarId(id);
 	}
 	
-	public void deletar(PessoaModel p) {
+	public void deletar(Long id) {
+		PessoaModel p = dao.pesquisarId(id);
 		dao.deletar(p);
 	}
 	
