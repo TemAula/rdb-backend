@@ -3,7 +3,6 @@ package com.temaula.rdb.controller;
 
 
 import javax.inject.Inject;
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -20,8 +19,7 @@ import com.temaula.rdb.service.PessoaService;
 
 @Path("pessoa")
 public class PessoaController{
-	private static final long serialVersionUID = 1L;
-
+	
 	@Inject
 	private PessoaService service;
 	
@@ -59,7 +57,6 @@ public class PessoaController{
 	@Path("/{id}")
 	public Response atualizar(@PathParam("id") Long id, PessoaModel p) {
 		p.setId(id);
-		System.out.println(p.toString());
 		service.atualizar(p);
 		return Response.status(202).build();
 	}
