@@ -1,4 +1,4 @@
-# Bem vindo ao projeto Ruieros do bem!
+# Bem vindo ao projeto Rueiros do Bem!
 
 ## Métodos do CRUD Pessoa (Usuário/Doador)
 
