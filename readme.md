@@ -1,5 +1,18 @@
 # Bem vindo ao projeto Rueiros do Bem!
 
+**Video ensinando a configurar o ambiente de desenvolvimento com Eclipse, WindFly e MySQL**
+
+[![](http://img.youtube.com/vi/2AY8JrgfDgU/0.jpg)](http://www.youtube.com/watch?v=2AY8JrgfDgU "Preparação de Ambiente de Desenvolvimento: Java Web com JPA + Eclipse + WildFly + MySQL")
+
+obs: Recomendamos instalar as mesmas versões que utilizamos nesse projeto.
+* Java 11
+* [MySQL 8.0.21](https://dev.mysql.com/downloads/connector/j/)
+* [WildFly 20.0.1 ](https://www.wildfly.org/downloads/)
+* [Eclipse IDE for Enterprise Java Developers ](https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers)
+* Maven 3.6.3
+
+---
+
 ## Métodos do CRUD Pessoa (Usuário/Doador)
 
 #### Pra adicionar uma pessoa 
