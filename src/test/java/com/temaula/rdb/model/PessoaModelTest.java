@@ -49,7 +49,7 @@ class PessoaModelTest {
 		}
 
 		assertThrows(IllegalArgumentException.class, () -> {
-			pessoa.setEndereço(str.toString());
+			pessoa.setEndereco(str.toString());
 		});
 	}
 

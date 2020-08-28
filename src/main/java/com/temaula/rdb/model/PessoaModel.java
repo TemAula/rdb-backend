@@ -35,7 +35,7 @@ public class PessoaModel {
 		setNome(nome);
 		setEmail(email);
 		setTelefone(telefone);
-		setEndereço(endereco);
+		setEndereco(endereco);
 		setSenha(senha);
 	}
 
@@ -82,15 +82,15 @@ public class PessoaModel {
 		this.telefone = telefone;
 	}
 
-	public String getEndereço() {
+	public String getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		if (endereço.length() > 128) {
+	public void setEndereco(String endereco) {
+		if (endereco.length() > 128) {
 			throw new IllegalArgumentException("o endereco conter menos de 128 caracteres");
 		}
-		this.endereco = endereço;
+		this.endereco = endereco;
 	}
 
 	public String getSenha() {
@@ -142,7 +142,7 @@ public class PessoaModel {
 
 	@Override
 	public String toString() {
-		return "Pessoa: [id=" + id + ", nome=" + nome + " emai=" + email + "]";
+		return "Pessoa: [id=" + id + ", nome=" + nome + " email=" + email + "]";
 	}
 
 }
