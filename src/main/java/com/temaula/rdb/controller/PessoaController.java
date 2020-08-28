@@ -39,8 +39,15 @@ public class PessoaController{
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response inserir(PessoaModel p) {
+		
+		//TODO: melhorar esse tratamento de erro, apresentar motivo do erro para o usuario
+		try {
 		service.inserir(p);
 		return Response.status(201).build();
+			
+		} catch (Exception e) {
+		return Response.status(500).build();
+		}
 	}
 	
     @DELETE

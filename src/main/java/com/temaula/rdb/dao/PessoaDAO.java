@@ -21,6 +21,7 @@ public class PessoaDAO {
 	}
 
 	public void inserir(PessoaModel pessoa) {
+		pessoa.setId(null);
 		entityManager.persist(pessoa);
 	}
 
