@@ -23,7 +23,7 @@ public class PessoaModel {
 	private String telefone;
 
 	@Column(length = 128)
-	private String endereço;
+	private String endereco;
 
 	@Column(length = 16, nullable = false)
 	private String senha;
@@ -31,12 +31,11 @@ public class PessoaModel {
 	public PessoaModel() {
 	}
 
-	public PessoaModel(Long id, String nome, String email, String telefone, String endereço, String senha) {
-		this.id = id;
+	public PessoaModel(String nome, String email, String telefone, String endereco, String senha) {
 		setNome(nome);
 		setEmail(email);
 		setTelefone(telefone);
-		setEndereço(endereço);
+		setEndereço(endereco);
 		setSenha(senha);
 	}
 
@@ -84,14 +83,14 @@ public class PessoaModel {
 	}
 
 	public String getEndereço() {
-		return endereço;
+		return endereco;
 	}
 
 	public void setEndereço(String endereço) {
 		if (endereço.length() > 128) {
-			throw new IllegalArgumentException("o endereço conter menos de 128 caracteres");
+			throw new IllegalArgumentException("o endereco conter menos de 128 caracteres");
 		}
-		this.endereço = endereço;
+		this.endereco = endereço;
 	}
 
 	public String getSenha() {
