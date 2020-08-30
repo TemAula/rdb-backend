@@ -1,8 +1,10 @@
 # Bem vindo ao projeto Rueiros do Bem!
 
-**Video ensinando a configurar o ambiente de desenvolvimento com Eclipse, WindFly e MySQL**
+**Clique na imagem abaixo e veja o video ensinando a configurar o ambiente de desenvolvimento com Eclipse, WindFly e MySQL**
 
-[![](http://img.youtube.com/vi/2AY8JrgfDgU/0.jpg)](http://www.youtube.com/watch?v=2AY8JrgfDgU "Preparação de Ambiente de Desenvolvimento: Java Web com JPA + Eclipse + WildFly + MySQL")
+[![](http://img.youtube.com/vi/Chq99u1Nvek/0.jpg)](http://www.youtube.com/watch?v=Chq99u1Nvek "Como configurar WildFly 20 com MySql 8 e Eclipse EE no Linux")
+
+
 
 obs: Recomendamos instalar as mesmas versões que utilizamos nesse projeto.
 * Java 11
