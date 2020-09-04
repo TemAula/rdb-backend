@@ -3,6 +3,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java-web,eclipse
 
 ### Eclipse ###
+.attach_pid5233
+.classpath
 .project
 .metadata
 bin/
