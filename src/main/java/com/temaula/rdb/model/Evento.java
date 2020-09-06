@@ -1,6 +1,7 @@
 package com.temaula.rdb.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -9,9 +10,9 @@ public class Evento implements Serializable
     
     private int id;
     private String nome;
-    private GregorianCalendar dataInicio;
-    private GregorianCalendar dataFim;
-    private GregorianCalendar dataCriacao;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
+    private LocalDate dataCriacao;
     private boolean ativo;
     private String descricao;
     private List<ItemDoacao> itensDoacao;
@@ -26,27 +27,27 @@ public class Evento implements Serializable
         this.nome = nome;
     }
 
-    public GregorianCalendar getDataInicio() {
+    public LocalDate getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(GregorianCalendar dataInicio) {
+    public void setDataInicio(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public GregorianCalendar getDataFim() {
+    public LocalDate getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(GregorianCalendar dataFim) {
+    public void setDataFim(LocalDate dataFim) {
         this.dataFim = dataFim;
     }
 
-    public GregorianCalendar getDataCriacao() {
+    public LocalDate getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(GregorianCalendar dataCriacao) {
+    public void setDataCriacao(LocalDate dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
