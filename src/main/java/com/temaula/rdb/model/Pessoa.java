@@ -7,8 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name = "Pessoa")
-public class PessoaModel implements Serializable {
+@Entity(name = "pessoa")
+public class Pessoa implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,10 +29,10 @@ public class PessoaModel implements Serializable {
 	@Column(length = 16, nullable = false)
 	private String senha;
 
-	public PessoaModel() {
+	public Pessoa() {
 	}
 
-	public PessoaModel(String nome, String email, String telefone, String endereco, String senha) {
+	public Pessoa(String nome, String email, String telefone, String endereco, String senha) {
 		setNome(nome);
 		setEmail(email);
 		setTelefone(telefone);
@@ -46,7 +46,7 @@ public class PessoaModel implements Serializable {
 
 	public void setNome(String nome) {
 		if (nome.trim().length() <= 3) {
-			throw new IllegalArgumentException("o nome deve conter mais de 3 caracteres válidos");
+			throw new IllegalArgumentException("o nome deve conter mais de 2 caracteres válidos");
 		}
 		if (nome.length() > 32) {
 			throw new IllegalArgumentException("o nome deve conter menos de 32 caracteres");
@@ -60,7 +60,7 @@ public class PessoaModel implements Serializable {
 
 	public void setEmail(String email) {
 		if (email.trim().length() <= 3) {
-			throw new IllegalArgumentException("o email deve conter mais de 3 caracteres válidos");
+			throw new IllegalArgumentException("o email deve conter mais de 2 caracteres válidos");
 		}
 		if (email.length() > 32) {
 			throw new IllegalArgumentException("o email conter menos de 32 caracteres");
@@ -132,7 +132,7 @@ public class PessoaModel implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PessoaModel other = (PessoaModel) obj;
+		Pessoa other = (Pessoa) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

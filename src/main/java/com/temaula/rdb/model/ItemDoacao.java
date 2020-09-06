@@ -12,7 +12,7 @@ public class ItemDoacao implements Serializable
     private double valorReferencia;
     private boolean ativo;
     private GregorianCalendar dataCriacao;
-    private PessoaModel autor;
+    private Pessoa autor;
 
     public int getId() {
         return id;
@@ -62,11 +62,11 @@ public class ItemDoacao implements Serializable
         this.dataCriacao = dataCriacao;
     }
 
-    public PessoaModel getAutor() {
+    public Pessoa getAutor() {
         return autor;
     }
 
-    public void setAutor(PessoaModel autor) {
+    public void setAutor(Pessoa autor) {
         this.autor = autor;
     }
     

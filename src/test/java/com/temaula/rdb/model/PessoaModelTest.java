@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 class PessoaModelTest {
-	static PessoaModel pessoa = new PessoaModel();
+	static Pessoa pessoa = new Pessoa();
 
 	@Test
 	void testSetNome() {

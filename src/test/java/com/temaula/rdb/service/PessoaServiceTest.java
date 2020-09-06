@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 
 import org.junit.jupiter.api.Test;
 
-import com.temaula.rdb.model.PessoaModel;
+import com.temaula.rdb.model.Pessoa;
 
 @Stateless(name = "TestPessoaService")
 class PessoaServiceTest {

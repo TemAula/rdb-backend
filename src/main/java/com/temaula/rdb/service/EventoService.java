@@ -7,7 +7,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 
 import com.temaula.rdb.model.Evento;
-import com.temaula.rdb.model.PessoaModel;
+import com.temaula.rdb.model.Pessoa;
 
 @Stateless
 public class EventoService {
@@ -24,7 +24,7 @@ public class EventoService {
 		e1.setDescricao("Sopao do Bras");
 		e1.setItensDoacao(null);
 
-		PessoaModel pessoa = new PessoaModel();
+		Pessoa pessoa = new Pessoa();
 		pessoa.setId(1L);
 		pessoa.setNome("Evandro");
 		pessoa.setEmail("email@email.com");
@@ -45,7 +45,7 @@ public class EventoService {
 		e2.setDescricao("Sopao do Se");
 		e2.setItensDoacao(null);
 
-		PessoaModel pessoa2 = new PessoaModel();
+		Pessoa pessoa2 = new Pessoa();
 		pessoa2.setId(1L);
 		pessoa2.setNome("Fredegundo");
 		pessoa2.setEmail("email@email.com");

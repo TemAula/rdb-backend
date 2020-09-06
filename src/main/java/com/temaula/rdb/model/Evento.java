@@ -16,7 +16,7 @@ public class Evento implements Serializable
     private boolean ativo;
     private String descricao;
     private List<ItemDoacao> itensDoacao;
-    private PessoaModel autor;
+    private Pessoa autor;
     private String urlImagem;
 
     public String getNome() {
@@ -75,11 +75,11 @@ public class Evento implements Serializable
         this.itensDoacao = itensDoacao;
     }
 
-    public PessoaModel getAutor() {
+    public Pessoa getAutor() {
         return autor;
     }
 
-    public void setAutor(PessoaModel autor) {
+    public void setAutor(Pessoa autor) {
         this.autor = autor;
     }
 

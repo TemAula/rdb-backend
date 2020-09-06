@@ -21,7 +21,7 @@ public class EventoController {
 	private EventoService eventoService;
 
 	@GET
-	@Path("/lista")
+	@Path("/")
 	@Produces(value = MediaType.APPLICATION_JSON)
 	public Response listarTodos() {
 		return Response.ok(eventoService.listarTodos()).build();
@@ -39,7 +39,7 @@ public class EventoController {
 	}
 
 	@POST
-	@Path("/inserir")
+	@Path("/")
 	@Consumes(value = MediaType.APPLICATION_JSON)
 	public Response inserir(Evento evento) {
 		eventoService.inserir(evento);

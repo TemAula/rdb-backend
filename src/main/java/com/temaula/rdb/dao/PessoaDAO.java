@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.temaula.rdb.model.PessoaModel;
+import com.temaula.rdb.model.Pessoa;
 
 @Stateless
 public class PessoaDAO {
@@ -15,26 +15,26 @@ public class PessoaDAO {
 	private EntityManager entityManager;
 	
 
-	public List<PessoaModel> listarTodos() {
-		return entityManager.createQuery("SELECT p FROM Pessoa p",
-				PessoaModel.class).getResultList();
+	public List<Pessoa> listarTodos() {
+		return entityManager.createQuery("SELECT p FROM pessoa p",
+				Pessoa.class).getResultList();
 	}
 
-	public void inserir(PessoaModel pessoa) {
+	public void inserir(Pessoa pessoa) {
 		pessoa.setId(null);
 		entityManager.persist(pessoa);
 	}
 
-	public void atualizar(PessoaModel t) {
+	public void atualizar(Pessoa t) {
 	entityManager.merge(t);	
 	}
 
 
-	public PessoaModel pesquisarId(Long id) {
-		return entityManager.find(PessoaModel.class, id);
+	public Pessoa pesquisarId(Long id) {
+		return entityManager.find(Pessoa.class, id);
 	}
 
-	public void deletar(PessoaModel t) {
+	public void deletar(Pessoa t) {
 		entityManager.remove(pesquisarId(t.getId()));
 	}
 	

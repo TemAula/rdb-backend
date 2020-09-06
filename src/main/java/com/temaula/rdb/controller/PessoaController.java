@@ -14,16 +14,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.temaula.rdb.model.PessoaModel;
+import com.temaula.rdb.model.Pessoa;
 import com.temaula.rdb.service.PessoaService;
 
-@Path("pessoa")
+@Path("/pessoa")
 public class PessoaController{
 	
 	@Inject
 	private PessoaService service;
 	
 	@GET
+	@Path("/")
 	@Produces(value = MediaType.APPLICATION_JSON)
 	public Response listarTodos(){
 		return Response.ok(service.listarTodos()).build();
@@ -38,7 +39,7 @@ public class PessoaController{
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response inserir(PessoaModel p) {
+	public Response inserir(Pessoa p) {
 		
 		//TODO: melhorar esse tratamento de erro, apresentar motivo do erro para o usuario
 		try {
@@ -62,7 +63,7 @@ public class PessoaController{
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/{id}")
-	public Response atualizar(@PathParam("id") Long id, PessoaModel p) {
+	public Response atualizar(@PathParam("id") Long id, Pessoa p) {
 		p.setId(id);
 		service.atualizar(p);
 		return Response.status(202).build();
