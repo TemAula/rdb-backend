@@ -73,6 +73,16 @@ public class EventoService {
 
 		return null;
 	}
+	
+	public boolean atualizar( Evento evento ) {
+		for(int i = 0; i < lista.size(); i++) {
+			if( lista.get( i ).getId() == evento.getId() ) {
+				lista.set(i, evento);
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public void inserir(Evento evento) {
 		lista.add(evento);
