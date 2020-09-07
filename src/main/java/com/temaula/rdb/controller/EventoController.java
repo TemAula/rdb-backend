@@ -5,6 +5,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -36,6 +37,17 @@ public class EventoController {
 			return Response.status(Response.Status.NOT_FOUND).entity("{ \"erro\" : \"ID não encontrado\" }").build();
 		}
 		return Response.ok(eventoService.pesquisarId(id)).build();
+	}
+	
+	@PUT
+	@Path("/")
+	@Consumes( value = MediaType.APPLICATION_JSON)
+	public Response atualizar(Evento evento) {
+		
+		if( eventoService.atualizar( evento ) )
+			return Response.status(201).build();
+		else
+			return Response.status(400).build();
 	}
 
 	@POST
