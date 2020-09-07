@@ -3,6 +3,7 @@ package com.temaula.rdb.controller;
 
 
 import javax.inject.Inject;
+import javax.json.bind.JsonbException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -10,7 +11,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.ProcessingException;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -43,11 +46,15 @@ public class PessoaController{
 		
 		//TODO: melhorar esse tratamento de erro, apresentar motivo do erro para o usuario
 		try {
-		service.inserir(p);
-		return Response.status(201).build();
+			if( p == null ) {
+				return Response.status(Response.Status.BAD_REQUEST).entity("{ \"Aviso\" : \"Informe os dados da Pessoa\" }").build();
+			}
 			
+			service.inserir( p );
+			return Response.status( 201 ).build();
 		} catch (Exception e) {
-		return Response.status(500).build();
+			return Response.status(500).build();
+			
 		}
 	}
 	
@@ -66,6 +73,7 @@ public class PessoaController{
 	public Response atualizar(@PathParam("id") Long id, Pessoa p) {
 		p.setId(id);
 		service.atualizar(p);
+		
 		return Response.status(202).build();
 	}
 	
