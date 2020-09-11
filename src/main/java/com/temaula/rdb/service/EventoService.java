@@ -8,6 +8,8 @@ import javax.ejb.Stateless;
 
 import com.temaula.rdb.model.Evento;
 import com.temaula.rdb.model.Pessoa;
+import java.sql.Timestamp;
+import java.time.Instant;
 
 @Stateless
 public class EventoService {
@@ -19,8 +21,7 @@ public class EventoService {
 		e1.setId(1);
 		e1.setDataInicio(LocalDate.now());
 		e1.setDataFim(LocalDate.now());
-		e1.setDataCriacao(LocalDate.of(2020, 01, 15));
-		e1.setAtivo(true);
+		e1.setDataCriacao(Timestamp.from(Instant.now()));
 		e1.setDescricao("Sopao do Bras");
 		e1.setItensDoacao(null);
 
@@ -40,8 +41,7 @@ public class EventoService {
 		e2.setId(2);
 		e2.setDataInicio(LocalDate.of(2020, 02, 15));
 		e2.setDataFim(LocalDate.of(2020, 02, 18));
-		e2.setDataCriacao(LocalDate.of(2020, 01, 15));
-		e2.setAtivo(true);
+		e2.setDataCriacao(Timestamp.from(Instant.now()));
 		e2.setDescricao("Sopao do Se");
 		e2.setItensDoacao(null);
 

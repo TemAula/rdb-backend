@@ -1,8 +1,8 @@
 package com.temaula.rdb.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Evento implements Serializable
@@ -12,12 +12,31 @@ public class Evento implements Serializable
     private String nome;
     private LocalDate dataInicio;
     private LocalDate dataFim;
-    private LocalDate dataCriacao;
+    private Timestamp dataCriacao;
     private boolean ativo;
     private String descricao;
     private List<ItemDoacao> itensDoacao;
     private Pessoa autor;
     private String urlImagem;
+    
+    public Evento() 
+    {
+        this.ativa();
+    }
+    
+    public Evento(int id, String nome, LocalDate dataInicio, LocalDate dataFim, Timestamp dataCriacao, String descricao, List<ItemDoacao> itensDoacao, Pessoa autor, String urlImagem)
+    {
+        this();
+        this.setId(id);
+        this.setNome(nome);
+        this.setDataInicio(dataInicio);
+        this.setDataFim(dataFim);
+        this.setDataCriacao(dataCriacao);
+        this.setDescricao(descricao);
+        this.setItensDoacao(itensDoacao);
+        this.setAutor(autor);
+        this.setUrlImagem(urlImagem);
+    }
 
     public String getNome() {
         return nome;
@@ -43,11 +62,11 @@ public class Evento implements Serializable
         this.dataFim = dataFim;
     }
 
-    public LocalDate getDataCriacao() {
+    public Timestamp getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(LocalDate dataCriacao) {
+    public void setDataCriacao(Timestamp dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
@@ -55,8 +74,18 @@ public class Evento implements Serializable
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    private void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+    
+    public void ativa()
+    {
+        setAtivo(true);
+    }
+    
+    public void desativa()
+    {
+        setAtivo(false);
     }
 
     public String getDescricao() {

@@ -1,7 +1,7 @@
 package com.temaula.rdb.model;
 
 import java.io.Serializable;
-import java.util.GregorianCalendar;
+import java.sql.Timestamp;
 
 public class ItemDoacao implements Serializable
 {
@@ -11,9 +11,25 @@ public class ItemDoacao implements Serializable
     private String nome;
     private double valorReferencia;
     private boolean ativo;
-    private GregorianCalendar dataCriacao;
+    private Timestamp dataCriacao;
     private Pessoa autor;
-
+    
+    public ItemDoacao() 
+    {
+        this.ativa();
+    }
+    
+    public ItemDoacao(int id, CategoriaItem categoria, String nome, double valorReferencia, Timestamp dataCriacao, Pessoa autor)
+    {
+        this();
+        this.setId(id);
+        this.setCategoria(categoria);
+        this.setNome(nome);
+        this.setValorReferencia(valorReferencia);
+        this.setDataCriacao(dataCriacao);
+        this.setAutor(autor);
+    }
+    
     public int getId() {
         return id;
     }
@@ -50,15 +66,25 @@ public class ItemDoacao implements Serializable
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    private void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
+    
+    public void ativa()
+    {
+        setAtivo(true);
+    }
+    
+    public void desativa()
+    {
+        setAtivo(false);
+    }
 
-    public GregorianCalendar getDataCriacao() {
+    public Timestamp getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(GregorianCalendar dataCriacao) {
+    public void setDataCriacao(Timestamp dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 

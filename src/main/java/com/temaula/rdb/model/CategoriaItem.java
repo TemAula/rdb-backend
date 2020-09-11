@@ -8,6 +8,16 @@ public class CategoriaItem implements Serializable
     private int id;
     private String nome;
     // private String urlIcone; // Se for necessário um ícone para a categoria
+    
+    public CategoriaItem() {}
+    
+    public CategoriaItem(int id, String nome/*, String urlIcone */)
+    {
+        this();
+        this.setId(id);
+        this.setNome(nome);
+        // this.setUrlIcone(urlIcone);
+    }
 
     public int getId() {
         return id;
